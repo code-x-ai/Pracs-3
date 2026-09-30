@@ -20,6 +20,7 @@ def get_one(sid):
 
 @app.route("/students", methods=["POST"])
 def add():
+    # pip install flask
     d = request.get_json()
     if not d or "id" not in d or "name" not in d or "course" not in d:
         return jsonify({"message": "Bad Request: missing fields"}), 400
